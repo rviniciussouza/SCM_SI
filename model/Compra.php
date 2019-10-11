@@ -3,26 +3,51 @@
 class Compra {
 
     private $codigo;
-    private $produto_id;
+    private $codproduto;
     private $nome;
     private $fornecedor;
+    private $data;
     private $valor;
     private $quantidade;
 
-    public function setCodigo($id) {
-        $this->id = $id;
+    public function getColumns() {
+        return ["codigo", "codproduto", "nome", "fornecedor", "valor", "quantidade"];
+    } 
+
+    public function getAll() {
+        return [
+            'codigo'        => $this->codigo,
+            'codproduto'    => $this->codproduto,
+            'nome'          => $this->nome,
+            'fornecedor'    => $this->fornecedor,
+            'valor'         => $this->valor,
+            'quantidade'    => $this->quantidade
+        ];
+    }
+
+    public function setAll($data) {
+        $this->codproduto   = $data['codproduto'];
+        $this->nome         = $data['nome'];
+        $this->data         = $data['data'];
+        $this->fornecedor   = $data['fornecedor'];
+        $this->valor        = $data['valor'];
+        $this->quantidade   = $data['quantidade'];
+    }
+
+    public function setCodigo($codigo) {
+        $this->codigo = $codigo;
     } 
 
     public function getCodigo() {
-        return $this->id;
+        return $this->codigo;
     }
 
-    public function setProduto_id($id) {
-        $this->id = $id;
+    public function setCodproduto($codproduto) {
+        $this->codproduto = $codproduto;
     } 
 
-    public function getProduto_id() {
-        return $this->id;
+    public function getCodproduto() {
+        return $this->codproduto;
     }
 
 
@@ -56,6 +81,14 @@ class Compra {
 
     public function getQuantidade() {
         return $this->quantidade;
+    }
+
+    public function setData($data) {
+        $this->data = $data;
+    } 
+
+    public function getData() {
+        return $this->data;
     }
 }
 
