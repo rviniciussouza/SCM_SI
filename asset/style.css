@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+    body{
+        font-family: Arail, sans-serif;
+    }
+
+    .alert{
+       position: fixed;
+        top: 5px; 
+        right:2%;
+        width: 30%;
+       display: none;
+
+       }
+
+       .title-page {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 10px;
+       }
+
+    .nova-compra, .pdf {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        /* padding: 5px; */
+        /* float: right;   */
+    }
+
+    h3 {
+        /* margin: 10px; */
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .conteudo {
+        margin: 10px;
+    }
