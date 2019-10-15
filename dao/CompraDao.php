@@ -54,6 +54,22 @@ class CompraDao {
         return $result;
     }
 
+    public function getDataUltimaCompra($codproduto) {
+        $stmt = $this->mysqli->prepare("SELECT data FROM Compra WHERE codproduto = ? ORDER BY data DESC LIMIT 1");
+        $stmt->bind_param('i', $codproduto);
+        $stmt->execute();
+        $stmt->store_result();
+        $stmt->bind_result($data);
+        if($stmt->num_rows > 0) {
+            while($stmt->fetch()) {
+                $result['data'] = $data;
+            }
+            return $result;
+        }
+        return FALSE;
+        
+    }
+
     public function deletar($codigo) {
         if($this->mysqli->query("DELETE FROM Compra WHERE codigo = ".$codigo.";") == TRUE) {
             return true;

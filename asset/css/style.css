@@ -17,6 +17,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        
         margin: 10px;
        }
 
@@ -33,5 +34,22 @@
     }
 
     .conteudo {
-        margin: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .login-form-div {
+        
+        width: 400px;
+        height: 400px;
+        background-color: purple;
+    }
+
+    .alert {
+        position: fixed;
+        top: 5px; 
+        right:2%;
+        width: 30%;
+        z-index: 100;
+        display: none;
     }
