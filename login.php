@@ -15,7 +15,7 @@
 
 	<div class="alert alert-danger">
 		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-		<strong>Erro!</strong> Dados incorretos. Tente novamente!.
+		<strong>Erro!</strong> Usuário ou senha inválidos.
 	</div>
 
 	<div class="wrapper">
