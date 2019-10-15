@@ -19,49 +19,19 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
     <script src="https://kit.fontawesome.com/ad7b506960.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/SCM_SI/asset/css/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script>
-        $(document).ready(function() {
-        $('#data-table tbody').on('click', '.remove', function(){
-            console.log('olá');
-            var id = $(this).attr("data-codigo");
-            var rowselect = $(this).parent().parent();
-            $.ajax({
-                url: '/SCM_SI/controller/CompraController.php',
-                type: 'GET',
-                data: { action: 'excluir', codigo: id},
-                success: function(data){
-                    if(data.status == 'sucess') {
-                        rowselect.fadeOut(600).remove();                    
-                        $(".alert-success").show();
-                        setTimeout(function(){
-                            $(".alert-success").hide(); 
-                        }, 3000);
-                    } else {
-                        $(".alert-danger").show();
-                        setTimeout(function(){
-                            $(".alert-danger").hide(); 
-                        }, 3000);
-                    }
-                    console.log(data);
-                }
-            });
-        });
-        });
-    </script>
 </head>
 
 <body>
 
-<div class="alert alert-success">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Success!</strong> Operação realizada com sucesso!.
-</div>
+    <div class="alert alert-success">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> Operação realizada com sucesso!.
+    </div>
 
-<div class="alert alert-danger" role="alert">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Danger!</strong> Essa operação não pode ser realizada!.
-</div>
+    <div class="alert alert-danger" role="alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Danger!</strong> Essa operação não pode ser realizada!.
+    </div>
 
     <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: 	#337ab7">
         <a class="navbar-brand" href="#"><i class="fas fa-dolly icon-brand"></i>SCM</a>
@@ -94,11 +64,9 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
         <nav aria-label="breadcrumb" style="align-self: center; !important">
             <ol class="breadcrumb my-auto">
                 <li class="breadcrumb-item active"><a href="#">Home</a></li>
-                <!-- <li class="breadcrumb-item"><a href="#">Biblioteca</a></li> -->
-                <li class="breadcrumb-item active" aria-current="page">Dados</li> 
+                <li class="breadcrumb-item active" aria-current="page">Dados</li>
             </ol>
         </nav>
-        <!-- <a class="btn nova-compra btn-outline-dark" href="view/compra/cadastrar.php" role="button">Nova compra</a> -->
     </div>
 
     <div class="conteudo">
@@ -125,5 +93,9 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
         </table>
     </div>
 </body>
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="asset/javascript/index.js"></script>
 
 </html>
