@@ -24,7 +24,7 @@ class CompraController {
 
     public function listar() {
         $row = $this->compraDao->getCompra();
-        if($row == NULL) {
+        if($row == FALSE) {
             echo "Nenhum dado foi encontrado";
         }
         else {

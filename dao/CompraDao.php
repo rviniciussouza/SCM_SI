@@ -4,83 +4,76 @@ require_once($_SERVER['DOCUMENT_ROOT']."SCM_SI/model/Banco.php");
 
 class CompraDao {
 
-    private $mysqli;
+    private $con;
 
     public function __construct() {   
-        $this->mysqli = Banco::getInstance()->getConnection();
+        $this->con = Banco::getInstance()->getConnection();
     }
 
     public function salvar($p) {
-
-        $stmt = $this->mysqli->prepare("INSERT INTO Compra (codproduto, nome, fornecedor, valor , data , quantidade)
-                                        VALUES (?,?,?,?,?,?)"); 
-        
-        if($stmt == FALSE) printf("Error: %s.\n", $this->mysqli->error);
-        else {
-            $codproduto = $p->getCodproduto();
-            $nome = $p->getNome();
-            $fornecedor = $p->getFornecedor();
-            $valor = $p->getValor();
-            $quantidade = $p->getQuantidade();
-            $data = $p->getData();
-            $stmt->bind_param('issdsi', $codproduto, $nome, $fornecedor, $valor, $data, $quantidade);
-            return $stmt->execute();
-        }
+        $sql = "INSERT INTO Compra (codproduto, nome, fornecedor, valor , data , quantidade) VALUES (?,?,?,?,?,?)";
+        $stmt = $this->con->prepare($sql);
+        $stmt->bindValue('1', $p->getCodproduto(), PDO::PARAM_INT);
+        $stmt->bindValue('2', $p->getNome(), PDO::PARAM_STR);
+        $stmt->bindValue('3', $p->getFornecedor(), PDO::PARAM_STR);
+        $stmt->bindValue('4', $p->getValor(), PDO::PARAM_STR);
+        $stmt->bindValue('5', $p->getData(), PDO::PARAM_STR);
+        $stmt->bindValue('6', $p->getQuantidade(), PDO::PARAM_INT);
+        return $stmt->execute();
     }
 
     public function update($p) {
 
-        $stmt = $this->mysqli->prepare("UPDATE Compra SET nome = ?, fornecedor = ? , valor = ?, quantidade = ?
-                                        WHERE codigo = ?");
-        
-        if($stmt == FALSE) printf("Error: %s.\n", $this->mysqli->error);
-        else {
-            $codigo = $p->getCodigo();
-            $nome = $p->getNome();
-            $fornecedor = $p->getFornecedor();
-            $valor = $p->getValor();
-            $quantidade = $p->getQuantidade();
-            $stmt->bind_param('ssdii', $nome, $fornecedor, $valor, $quantidade, $codigo);
-            return $stmt->execute();
-        }
+        $sql = "UPDATE Compra SET nome = ?, fornecedor = ? , valor = ?, quantidade = ? WHERE codigo = ?";
+        $stmt = $this->con->prepare($sql);
+        $stmt->bindValue('1', $p->getNome(), PDO::PARAM_STR);
+        $stmt->bindValue('2', $p->getFornecedor(), PDO::PARAM_STR);
+        $stmt->bindValue('3', $p->getValor(), PDO::PARAM_STR);
+        $stmt->bindValue('4', $p->getQuantidade(), PDO::PARAM_INT);
+        $stmt->bindValue('5', $p->getCodigo(), PDO::PARAM_INT);
+        return $stmt->execute();
+
     }
 
     public function getCompra() {
-        $query = $this->mysqli->query("SELECT * FROM Compra");
-        if($query->num_rows == 0) return NULL;
-        while ($row = $query->fetch_assoc()) {
-           $result[] = $row;
+        $stmt = $this->con->prepare("SELECT * FROM Compra");
+        $stmt->execute();
+        if($result =  $stmt->fetchAll(PDO::FETCH_ASSOC)) {
+            return $result;
+        }   
+        else {
+            return FALSE;
         }
-        return $result;
     }
 
     public function getDataUltimaCompra($codproduto) {
-        $stmt = $this->mysqli->prepare("SELECT data FROM Compra WHERE codproduto = ? ORDER BY data DESC LIMIT 1");
-        $stmt->bind_param('i', $codproduto);
-        $stmt->execute();
-        $stmt->store_result();
-        $stmt->bind_result($data);
-        if($stmt->num_rows > 0) {
-            while($stmt->fetch()) {
-                $result['data'] = $data;
-            }
+        $sql = "SELECT data FROM Compra WHERE codproduto = :codproduto ORDER BY data DESC LIMIT 1";
+        $stmt = $this->con->prepare($sql);
+        $stmt->execute(array('codproduto' => $codproduto));
+        if($result = $stmt->fetch()) {
             return $result;
         }
         return FALSE;
-        
     }
 
     public function deletar($codigo) {
-        if($this->mysqli->query("DELETE FROM Compra WHERE codigo = ".$codigo.";") == TRUE) {
-            return true;
-        }
-        else return false;
+        $sql = "DELETE FROM Compra WHERE codigo = ?";
+        $stmt = $this->con->prepare($sql);
+        $stmt->bindValue('1', $codigo, PDO::PARAM_INT);
+        return $stmt->execute();
     }
 
     public function getById($codigo) {
-        $query = $this->mysqli->query("SELECT * FROM Compra WHERE codigo = ".$codigo.";");
-        if($query->num_rows == 0) return false;
-        else return $query->fetch_assoc();
+        $sql = "SELECT * FROM Compra WHERE codigo = :codigo";
+        $stmt = $this->con->prepare($sql);
+        $stmt->execute(array('codigo' => $codigo));
+        if($result =  $stmt->fetch(PDO::FETCH_ASSOC)) {
+            var_dump($result);
+            return $result;
+        }   
+        else {
+            return FALSE;
+        }
     }
 }
 
