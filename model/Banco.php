@@ -19,8 +19,8 @@ class Banco
 
     private function __construct()
     {
-        $dsn = 'mysql:dbname=SI; host=127.0.0.1';
-        $user = 'root';
+        $dsn = 'pgsql:dbname=SI; host=localhost';
+        $user = 'postgres';
         $password = '12345';
         try {
             $this->_connection = new PDO($dsn, $user, $password);

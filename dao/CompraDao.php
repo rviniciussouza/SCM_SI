@@ -68,7 +68,6 @@ class CompraDao {
         $stmt = $this->con->prepare($sql);
         $stmt->execute(array('codigo' => $codigo));
         if($result =  $stmt->fetch(PDO::FETCH_ASSOC)) {
-            var_dump($result);
             return $result;
         }   
         else {
