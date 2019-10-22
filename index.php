@@ -8,23 +8,6 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
 }
 
 ?>
-<?php
-# This function reads your DATABASE_URL configuration automatically set by Heroku
-# the return value is a string that will work with pg_connect
-function pg_connection_string() {
-  // we will fill this out next
-  return "dbname=df4j5o5sohms3p host=ec2-174-129-252-228.compute-1.amazonaws.com port=5432 user=bbkylaoouxslnh password=9f1bbc8e5dcb80fd76e57bd51be799bc7f0ba54b4b8974ac3b1cb07d6e82933d sslmode=require";
-  
-}
-# Establish db connection
-$db = pg_connect(pg_connection_string());
-if (!$db) {
-    echo "Database connection error.";
-    exit;
-}
- 
-$result = pg_query($db, "SELECT statement goes here");
-?>
 <!DOCTYPE HTML>
 <html>
 
