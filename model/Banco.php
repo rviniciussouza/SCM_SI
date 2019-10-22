@@ -19,11 +19,8 @@ class Banco
 
     private function __construct()
     {
-        $dsn = 'pgsql:dbname=SI; host=localhost';
-        $user = 'postgres';
-        $password = '12345';
         try {
-            $this->_connection = new PDO($dsn, $user, $password);
+            $this->_connection = new PDO(DSN, BD_USER, BD_PASSWORD);
         } catch (PDOException $e) {
             echo 'Connection failed: ' . $e->getMessage();
         }
