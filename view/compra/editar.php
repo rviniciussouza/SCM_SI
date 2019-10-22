@@ -1,4 +1,4 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT']."/SCM_SI/controller/CompraController.php");
+<?php require_once($_SERVER['DOCUMENT_ROOT']."/controller/CompraController.php");
 
 
 session_start();

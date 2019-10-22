@@ -1,7 +1,7 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/SCM_SI/dao/CompraDao.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/SCM_SI/model/Compra.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/dao/CompraDao.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/model/Compra.php");
 
 class CompraController {
 

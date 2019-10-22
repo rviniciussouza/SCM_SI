@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/SCM_SI/model/Banco.php");
+require_once($_SERVER['DOCUMENT_ROOT']."/model/Banco.php");
 
 class CompraDao {
 
