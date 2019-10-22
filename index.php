@@ -16,11 +16,10 @@ function pg_connection_string() {
   return "dbname=df4j5o5sohms3p host=ec2-174-129-252-228.compute-1.amazonaws.com port=5432 user=bbkylaoouxslnh password=9f1bbc8e5dcb80fd76e57bd51be799bc7f0ba54b4b8974ac3b1cb07d6e82933d sslmode=require";
   
 }
- 
 # Establish db connection
 $db = pg_connect(pg_connection_string());
 if (!$db) {
-    echo "Database connection error."
+    echo "Database connection error.";
     exit;
 }
  
