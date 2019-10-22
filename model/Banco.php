@@ -1,7 +1,7 @@
 <?php
 
 
-require_once($_SERVER['DOCUMENT_ROOT'] . "SCM_SI/init.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/SCM_SI/init.php");
 
 class Banco
 {
