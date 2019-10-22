@@ -1,5 +1,7 @@
 CREATE DATABASE SI;
 
+\c si;
+
 CREATE TABLE Compra (
 	codigo serial NOT NULL PRIMARY KEY,
 	codproduto INT NOT NULL,
@@ -9,7 +11,6 @@ CREATE TABLE Compra (
 	data DATE NOT NULL,
 	quantidade INT NOT NULL
 );
-
 
 
 INSERT INTO Compra (nome, fornecedor, data, quantidade, valor, codproduto) VALUES ('TV 4K', 'LG', '2019-10-22', 100, 2000.00, 4);

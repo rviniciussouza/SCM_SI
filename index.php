@@ -1,4 +1,7 @@
-<?php require_once("controller/CompraController.php");
+<?php
+
+require_once($_SERVER['DOCUMENT_ROOT']."/SCM_SI/controller/CompraController.php");
+
 
 session_start();
 if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
