@@ -4,7 +4,7 @@ $(document).ready(function () {
         var id = $(this).attr("data-codigo");
         var rowselect = $(this).parent().parent();
         $.ajax({
-            url: '/SCM_SI/controller/CompraController.php',
+            url: 'controller/CompraController.php',
             type: 'GET',
             data: { action: 'excluir', codigo: id },
             success: function (data) {

@@ -6,7 +6,7 @@ session_start();
 if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
     unset($_SESSION['login']);
     unset($_SESSION['senha']);
-    header('location:/SCM_SI/login.php');
+    header('location:login.php');
 }
 
 ?>
@@ -28,7 +28,7 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
 
 
     <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: 	#337ab7">
-        <a class="navbar-brand" href="/SCM_SI"><i class="fas fa-dolly icon-brand"></i>SCM</a>
+        <a class="navbar-brand" href="index.php"><i class="fas fa-dolly icon-brand"></i>SCM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

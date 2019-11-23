@@ -27,7 +27,7 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
 
 
     <nav class="navbar navbar-dark navbar-expand-lg" style="background-color: 	#337ab7">
-        <a class="navbar-brand" href="/SCM_SI"><i class="fas fa-dolly icon-brand"></i>SCM</a>
+        <a class="navbar-brand" href="index.php"><i class="fas fa-dolly icon-brand"></i>SCM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +43,7 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
                     <a class="nav-link" href="https://github.com/rviniciussouza/SCM_SI"><i class="fab fa-github"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/SCM_SI/controller/LoginController.php?action=logout"><i class="fas fa-sign-out-alt"></i></a>
+                    <a class="nav-link" href="controller/LoginController.php?action=logout"><i class="fas fa-sign-out-alt"></i></a>
                 </li>
 
 
@@ -69,7 +69,7 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
     <!-- <div style="width: 500px" > -->
     <?php $compra = $compraController->getById($_GET['codigo']); ?>
 
-<form method="post" action="/SCM_SI/controller/CompraController.php?action=update" id="form">
+<form method="post" action="controller/CompraController.php?action=update" id="form">
     <input type="hidden" value="<?php echo $compra['codigo'] ?>" name="codigo" required />
 
     <div class="form-row">
