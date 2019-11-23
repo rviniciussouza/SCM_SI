@@ -1,7 +1,8 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/dao/CompraDao.php");
-require_once($_SERVER['DOCUMENT_ROOT']."/model/Compra.php");
+$path = realpath('.');
+require_once(__DIR__."/../dao/CompraDao.php");
+require_once(__DIR__."/../model/Compra.php");
 
 class CompraController {
 
@@ -16,7 +17,7 @@ class CompraController {
         $compra = new Compra();
         $compra->setAll($_POST);
         if($this->compraDao->salvar($compra)) {
-            echo "<script>alert('Compra incluído com sucesso!');document.location='/../SCM_SI/view/compra/cadastrar.php'</script>";
+            echo "<script>alert('Compra incluído com sucesso!');document.location='../cadastrar.php'</script>";
         } else{
             echo "<script>alert('Erro ao gravar compra!');history.back()</script>";
         }
@@ -37,7 +38,7 @@ class CompraController {
                 echo "<td>".$value['quantidade'] ."</td>";
                 echo "<td>".$value['data'] ."</td>";
                 echo "<td>
-                        <a class='btn btn-warning' href='view/compra/editar.php?codigo=".$value['codigo']."'>Editar</a>
+                        <a class='btn btn-warning' href='editar.php?codigo=".$value['codigo']."'>Editar</a>
                         <a class='remove btn btn-danger' data-codigo=".$value['codigo'].">Excluir</a></td>";
                 echo "</tr>";
             }
@@ -69,7 +70,7 @@ class CompraController {
         $compra->setValor($_POST['valor']);
         $compra->setQuantidade($_POST['quantidade']);
         if($this->compraDao->update($compra)) {
-            echo "<script>alert('Compra editado com sucesso!');document.location='/SCM_SI/index.php'</script>";
+            echo "<script>alert('Compra editado com sucesso!');document.location='../index.php'</script>";
         }else{
             echo "<script>alert('Erro ao atualizar compra!');history.back()</script>";
         }

@@ -1,4 +1,6 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT']."/controller/CompraController.php"); 
+<?php
+
+require_once("controller/CompraController.php");
 
 session_start();
 if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
@@ -33,7 +35,7 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="btn nova-compra btn-outline-light" href="view/compra/cadastrar.php" role="button">Nova compra</a>
+                    <a class="btn nova-compra btn-outline-light" href="cadastrar.php" role="button">Nova compra</a>
                 </li>
 
             </ul>
@@ -44,8 +46,6 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
                 <li class="nav-item">
                     <a class="nav-link" href="controller/LoginController.php?action=logout"><i class="fas fa-sign-out-alt"></i></a>
                 </li>
-
-
             </ul>
         </div>
     </nav>
@@ -65,7 +65,7 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
 
     <div class="conteudo"> 
 
-    <form method="post" action="/../SCM_SI/controller/CompraController.php?action=salvar" id="form">
+    <form method="post" action="controller/CompraController.php?action=salvar" id="form">
 
         <div class="form-row">
             <div class="form-group col-md-6">

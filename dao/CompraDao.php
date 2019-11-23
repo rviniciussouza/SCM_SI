@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER['DOCUMENT_ROOT']."/model/Banco.php");
+require_once(__DIR__."/../model/Banco.php");
 
 class CompraDao {
 

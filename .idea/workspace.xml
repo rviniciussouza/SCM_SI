@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="390acabe-bf5f-48a4-a83b-6c9aa3992d6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SCM_SI/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ERPRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/ERPRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SCM_SI/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/SCM_SI/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cadastrar.php" beforeDir="false" afterPath="$PROJECT_DIR$/cadastrar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/CompraController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/CompraController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/CompraDao.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/CompraDao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/editar.php" beforeDir="false" afterPath="$PROJECT_DIR$/editar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Banco.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Banco.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1SaBsoFasnsIgfL88AjvK8YYE85" />
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="390acabe-bf5f-48a4-a83b-6c9aa3992d6c" name="Default Changelist" comment="" />
+      <created>1571792036235</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571792036235</updated>
+      <workItem from="1571792045257" duration="1443000" />
+      <workItem from="1571793616819" duration="4115000" />
+      <workItem from="1574444127780" duration="6573000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

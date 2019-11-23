@@ -1,11 +1,11 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT']."/controller/CompraController.php");
-
+<?php
+require_once('controller/CompraController.php');
 
 session_start();
 if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
     unset($_SESSION['login']);
     unset($_SESSION['senha']);
-    header('location:/SCM_SI/login.php');
+    header('location:login.php');
 }
 
 ?>
@@ -34,7 +34,7 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="btn nova-compra btn-outline-light" href="view/compra/cadastrar.php" role="button">Nova compra</a>
+                    <a class="btn nova-compra btn-outline-light" href="cadastrar.php" role="button">Nova compra</a>
                 </li>
 
             </ul>
