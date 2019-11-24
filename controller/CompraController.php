@@ -38,8 +38,8 @@ class CompraController {
                 echo "<td>".$value['quantidade'] ."</td>";
                 echo "<td>".$value['data'] ."</td>";
                 echo "<td>
-                        <a class='btn btn-warning' href='editar.php?codigo=".$value['codigo']."'>Editar</a>
-                        <a class='remove btn btn-danger' data-codigo=".$value['codigo'].">Excluir</a></td>";
+                        <a href='editar.php?codigo=".$value['codigo']."'><img src='media/images/edit_pencil.png' height='24'/></a>
+                        <a class='remove'  data-codigo=".$value['codigo']."><img src='media/images/delete.png' height='20'/></a></td>";
                 echo "</tr>";
             }
         }

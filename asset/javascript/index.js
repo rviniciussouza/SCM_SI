@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    $('#data-table tbody').on('click', '.remove', function () {
-        console.log('olá');
+    $('#example tbody').on('click', '.remove', function () {
         var id = $(this).attr("data-codigo");
         var rowselect = $(this).parent().parent();
+        console.log('efef');
         $.ajax({
             url: 'controller/CompraController.php',
             type: 'GET',
