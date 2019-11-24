@@ -1,24 +1,20 @@
-$(document).ready(function() {
-    $('#form-login').on('submit', function(e) {
+$(document).ready(function () {
+    $('#form-login').on('submit', function (e) {
         e.preventDefault();
         var dados = $(this).serialize();
-        console.log(dados);
-        console.log('yes');
         $.ajax({
             url: 'controller/LoginController.php?action=autenticar',
             type: 'POST',
             data: dados,
-            success: function(data) {
-                if (data['status'] === 'sucess') {
+            success: function (data) {
+                if (data['success'] === true) {
                     window.location.replace('index.php');
                 } else {
                     $(".alert-danger").show();
-                    setTimeout(function() {
+                    setTimeout(function () {
                         $(".alert-danger").hide();
                     }, 3000);
                 }
-
-                console.log(data);
             }
         });
     });

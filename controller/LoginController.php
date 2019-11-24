@@ -5,23 +5,26 @@ class LoginController {
 
     public function autenticar() {
 
-        $response_array['status'] = 'error';
         if(isset($_POST['login']) && isset($_POST['senha'])) {
-            $user = $_POST['login'];        
-            $senha = $_POST['senha'];
-            if($user == 'admin' && $senha == 'admin') {
+            $token = "acc63bae8cc4";
+            $dados = 'login=' . $_POST['login'] . '&senha=' . $_POST['senha'] . '&token=' . $token;
+            $handler = curl_init('http://crm-si.herokuapp.com/service/checkget.php/?'.$dados);
+            curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);            
+            $response_array = json_decode(curl_exec($handler), true);
+            if($response_array['success'] == true) {
                 session_start();
-                $_SESSION['login'] = $user;
-                $_SESSION['senha'] = $senha;
-                $response_array['status'] = 'sucess';
-            }
+                $_SESSION['login'] = $_POST['login'];
+                $_SESSION['senha'] = $_POST['senha'];;
+            }   
+            curl_close($handler);
+            header('Content-type: application/json');
+            echo json_encode($response_array);
         }
         else {
             unset($_SESSION['login']);
             unset($_SESSION['senha']);
         }
-        header('Content-type: application/json');
-        echo json_encode($response_array);
+        
     }
 
     public function logout() {
