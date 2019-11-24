@@ -7,7 +7,7 @@ $(document).ready(function () {
             type: 'POST',
             data: dados,
             success: function (data) {
-                if (data['success'] === true) {
+                if (data['success']) {
                     window.location.replace('index.php');
                 } else {
                     $(".alert-danger").show();
