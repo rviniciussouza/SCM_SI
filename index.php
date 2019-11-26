@@ -33,9 +33,9 @@ if (!isset($_SESSION['login']) && !isset($_SESSION['senha'])) {
 	<script type="text/javascript" language="javascript" class="init">
 	
 
-$(document).ready(function() {
-	$('#example').DataTable();
-} );
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
 
 
 	</script>
@@ -90,8 +90,7 @@ $(document).ready(function() {
     </div>
 
     <div class="conteudo">
-
-    <div class="demo-html">
+        <div class="demo-html">
 			<table id="example" class="display" style="width:100%">
 				<thead>
                     <tr>
@@ -120,12 +119,30 @@ $(document).ready(function() {
                     </tr>
 				</tfoot>
             </table>
-    </div>
+        </div>
     </div>
 </body>
 
 
 <!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
 <script src="asset/javascript/index.js"></script>
-
+<script type="text/javascript">
+    var notify = "<?php if(isset($_SESSION['msg'])) {
+            echo $_SESSION['msg'];
+            unset($_SESSION['msg']);
+        }?>";
+    if(notify == "sucesso") {
+        $(".alert-success").show();
+            setTimeout(function () {
+                $(".alert-success").hide();
+            }, 3000);        
+    }
+    else if(notify == "erro") {
+        $(".alert-danger").show();
+        setTimeout(function () {
+            $(".alert-danger").hide();
+        }, 3000);
+    }
+   
+</script>
 </html>

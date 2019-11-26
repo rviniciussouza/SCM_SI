@@ -38,6 +38,14 @@
         display: none;
     }
 
+    #loading-img {
+        position: fixed;
+        top: 5px; 
+        right:2%;
+        z-index: 100;
+        display: none;
+    }
+
     /* .box-login form { */
         /* padding: 10px; */
     /* } */

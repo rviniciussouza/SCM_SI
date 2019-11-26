@@ -54,6 +54,7 @@
         display: none;
     }
 
+
     .button-edit {
         background-image: url(../../media/images/edit_pencil.png); /* 16px x 16px */
         background-color: transparent; /* make the button transparent */

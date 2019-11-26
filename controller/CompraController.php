@@ -70,8 +70,13 @@ class CompraController {
         $compra->setValor($_POST['valor']);
         $compra->setQuantidade($_POST['quantidade']);
         if($this->compraDao->update($compra)) {
-            echo "<script>alert('Compra editado com sucesso!');document.location='../index.php'</script>";
+            session_start();
+            $_SESSION['msg'] = "sucesso";
+            echo "<script>document.location='../index.php'</script>";
+
         }else{
+            session_start();
+            $_SESSION['msg'] = "erro";
             echo "<script>alert('Erro ao atualizar compra!');history.back()</script>";
         }
         

@@ -6,6 +6,9 @@ $(document).ready(function () {
             url: 'controller/LoginController.php?action=autenticar',
             type: 'POST',
             data: dados,
+            beforeSend: function(){
+                $("#loading-img").show();
+            },
             success: function (data) {
                 if (data['success']) {
                     window.location.replace('index.php');
@@ -15,6 +18,9 @@ $(document).ready(function () {
                         $(".alert-danger").hide();
                     }, 3000);
                 }
+            },
+            complete:function(){
+                $("#loading-img").hide();
             }
         });
     });
