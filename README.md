@@ -13,3 +13,16 @@ psql -U user -h localhost -a -f bd.sql
 ```
 
 Esse comando vai criar o database, tabela e realizar registros de teste.
+
+
+
+## API Ultimacompra
+
+Para consumir nosso serviço que retorna a data da última compra de um determinado produto, é necessário enviar uma requisição via GET para o seguinte endereço: http://scm-si.herokuapp.com/service/ultimacompra.php/?codproduto=''&token=''
+
+Parâmetros: código do produto e o token do serviço que está realizando a requisição. 
+
+Se o código do produto e o token forem válidos, o sistema retorna o status da requisição e data da última compra.
+Exemplo {"status":"true","data":"1997-10-22"}.
+Se apenas o token for inválido, o sistema retorna a seguinte saída {"status":false,"detalhes":"token invalido"}
+Se apenas o codigo do produto for inválido, o sistema retorna a seguinte saída {"status":false,"detalhes":"codigo do produto invalido"}
