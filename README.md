@@ -27,6 +27,12 @@ Exemplo:
 ```php
 {"status":"true","data":"1997-10-22"}
 ```
-Se apenas o token for inválido, o sistema retorna a seguinte saída ```php{"status":false,"detalhes":"token invalido"}```
+Se apenas o token for inválido, o sistema retorna a seguinte saída 
+```php
+{"status":false,"detalhes":"token invalido"}
+```
 
-Se apenas o codigo do produto for inválido, o sistema retorna a seguinte saída ```php{"status":false,"detalhes":"codigo do produto invalido"}```
+Se apenas o codigo do produto for inválido, o sistema retorna a seguinte saída 
+```php
+{"status":false,"detalhes":"codigo do produto invalido"}
+```
