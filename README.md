@@ -23,7 +23,9 @@ Para consumir nosso serviço que retorna a data da última compra de um determin
 Parâmetros: código do produto e o token do serviço que está realizando a requisição. 
 
 Se o código do produto e o token forem válidos, o sistema retorna o status da requisição e data da última compra.
-Exemplo '''php
-{"status":"true","data":"1997-10-22"}'''.
+Exemplo:
+'''php
+{"status":"true","data":"1997-10-22"}
+'''.
 Se apenas o token for inválido, o sistema retorna a seguinte saída {"status":false,"detalhes":"token invalido"}
 Se apenas o codigo do produto for inválido, o sistema retorna a seguinte saída {"status":false,"detalhes":"codigo do produto invalido"}
